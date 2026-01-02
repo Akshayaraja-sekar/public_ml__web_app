@@ -9,9 +9,9 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 
 # loading the models
-diabetes_model = pickle.load(open('C:/Users/Akshaya/Desktop/savedmodels/trained_model.sav', 'rb'))
-heart_disease_model = pickle.load(open('C:/Users/Akshaya/Desktop/savedmodels/heart_disease_model.sav', 'rb'))
-parkinsons_model = pickle.load(open('C:/Users/Akshaya/Desktop/savedmodels/parkinsons_model.sav', 'rb'))
+diabetes_model = pickle.load(open('trained_model.sav', 'rb'))
+heart_disease_model = pickle.load(open('heart_disease_model.sav', 'rb'))
+parkinsons_model = pickle.load(open('parkinsons_model.sav', 'rb'))
 
 # create navigation
 with st.sidebar:
@@ -233,4 +233,5 @@ if selected == 'Parkinsons Prediction':
         except ValueError:
             parkinsons_diagnosis = "⚠️ Please enter valid numeric values for all fields."
     
+
     st.success(parkinsons_diagnosis)
